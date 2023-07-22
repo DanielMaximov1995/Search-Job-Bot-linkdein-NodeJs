@@ -14,17 +14,12 @@ exports.scrapeJobs = () => {
       slowMo: 50,
       defaultViewport : { 'width' : width, 'height' : height },
       waitUntil: ["networkidle2"],
-      // args: [`--proxy-server=http://p.webshare.io:80`, "--no-sandbox"],
       
     });
 
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout( 90000 )
     await page.setViewport( { 'width' : width, 'height' : height } )
-    // await page.authenticate({
-    //   username: "yssyzsxj-rotate",
-    //   password: "9x1y2eu9ees9",
-    // });
     await page.setCookie({
       name: "li_at",
       value:
@@ -72,14 +67,13 @@ exports.scrapeJob = (id, i , len) => {
       headless: true,
       slowMo: 50,
       waitUntil : 'networkidle2',
-      args: [`--proxy-server=149.14.243.178:80`],
       
     });
 
     const page = await browser.newPage();
     await page.authenticate({
-      username: "yssyzsxj-rotate",
-      password: "9x1y2eu9ees9",
+      username: "",
+      password: "",
     });
 
     await page.setCookie({
